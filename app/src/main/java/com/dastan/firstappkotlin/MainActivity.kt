@@ -1,9 +1,8 @@
 package com.dastan.firstappkotlin
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -31,19 +30,20 @@ class MainActivity : AppCompatActivity() {
         btnClick.setOnClickListener {
             val userName = etUserName.text.toString()
             val password = etPassword.text.toString()
-            //UIManager.showToast("${etUserName.text} ${etPassword.text}", this )
             checkUserData(userName, password)
 
         }
     }
 
-    private fun  checkUserData(userName: String, password: String){
-       if(nameList.contains(userName) && passList.contains(password))
-           startActivity(Intent(this, SecondActivity::class.java)
-               .putExtra("userName", userName)
-               .putExtra("password", password))
-        else if (paskhalka.contains(userName) && paskhalkaPassword.contains(password))
+    private fun checkUserData(userName: String, password: String) {
+        if (paskhalka.contains(userName) && paskhalkaPassword.contains(password))
             startActivity(Intent(this, PaskhalkaActivity::class.java))
+        else if (nameList.contains(userName) && passList.contains(password))
+            startActivity(
+                Intent(this, SecondActivity::class.java)
+                    .putExtra("userName", userName)
+                    .putExtra("password", password)
+            )
         else UIManager.showToast("ERROR", this)
     }
 }
