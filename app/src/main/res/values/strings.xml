@@ -3,4 +3,12 @@
     <string name="user_name">User name</string>
     <string name="password">Password</string>
     <string name="log_in_btn">Log in</string>
+    <string name="tvAddress">Адрес: </string>
+    <string name="AddressInfo">Боконбаева - Пр.Мира</string>
+    <string name="date">Дата: </string>
+    <string name="dateInfo">17:55, Четверг 27.02.2020</string>
+    <string name="amount">Итого:</string>
+    <string name="amountInfo">1057,98 сом</string>
+    <string name="discount">Сумма скидки:</string>
+    <string name="discountInfo">107,86 сом</string>
 </resources>

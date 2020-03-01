@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.ThirdActivity">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/margin20"
+        android:layout_marginStart="@dimen/margin20">
+
+        <TextView
+            android:id="@+id/tvAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tvAddress"
+            android:paddingEnd="@dimen/margin8"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvAddressInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/AddressInfo"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@id/tvAddress"
+            app:layout_constraintTop_toTopOf="@id/tvAddress"
+            app:layout_constraintBottom_toBottomOf="@id/tvAddress"/>
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/date"
+            android:layout_marginTop="@dimen/margin10"
+            android:paddingEnd="@dimen/margin8"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvAddress"/>
+
+        <TextView
+            android:id="@+id/tvDateInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dateInfo"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="@id/tvDate"
+            app:layout_constraintLeft_toRightOf="@id/tvDate"
+            app:layout_constraintBottom_toBottomOf="@id/tvDate"/>
+
+        <TextView
+            android:id="@+id/tvAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/amount"
+            android:layout_marginTop="@dimen/margin10"
+            android:paddingEnd="@dimen/margin8"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvDate"/>
+
+        <TextView
+            android:id="@+id/tvAmountInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/amountInfo"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="@id/tvAmount"
+            app:layout_constraintLeft_toRightOf="@id/tvAmount"
+            app:layout_constraintBottom_toBottomOf="@id/tvAmount"/>
+
+        <TextView
+            android:id="@+id/tvDiscount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/discount"
+            android:layout_marginTop="@dimen/margin10"
+            android:paddingEnd="@dimen/margin8"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvAmount"/>
+
+        <TextView
+            android:id="@+id/tvDiscountInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/discountInfo"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="@id/tvDiscount"
+            app:layout_constraintLeft_toRightOf="@id/tvDiscount"
+            app:layout_constraintBottom_toBottomOf="@id/tvDiscount"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rvProduct"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/data_list"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutTV"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

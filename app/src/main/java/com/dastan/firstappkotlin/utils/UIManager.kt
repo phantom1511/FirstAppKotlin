@@ -1,4 +1,4 @@
-package com.dastan.firstappkotlin
+package com.dastan.firstappkotlin.utils
 
 import android.content.Context
 import android.widget.Toast
