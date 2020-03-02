@@ -5,19 +5,14 @@ import android.os.Bundle
 import com.dastan.firstappkotlin.R
 import com.dastan.firstappkotlin.model.MockModel
 import com.dastan.firstappkotlin.model.Purchases
+import com.dastan.firstappkotlin.model.createPurchases
 import kotlinx.android.synthetic.main.activity_third.*
 
 class ThirdActivity : AppCompatActivity() {
 
     val namePList = mutableListOf<String>("444", "333", "222")
     val passPList = mutableListOf<String>("444", "333", "222")
-    val adapter: Adapter = Adapter(mutableListOf<Purchases>().apply {
-        this.add(Purchases(1, "Cristiano", 5.5, 5.5, 100.5))
-        this.add(Purchases(2, "Cristiano", 5.5, 5.5, 100.5))
-        this.add(Purchases(3, "Cristiano", 5.5, 5.5, 100.5))
-        this.add(Purchases(4, "Cristiano", 5.5, 5.5, 100.5))
-        this.add(Purchases(5, "Cristiano", 5.5, 5.5, 100.5))
-    })
+    val adapter: Adapter = Adapter(createPurchases())
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
