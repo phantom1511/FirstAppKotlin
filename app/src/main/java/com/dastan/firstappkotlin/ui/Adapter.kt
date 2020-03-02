@@ -1,5 +1,6 @@
 package com.dastan.firstappkotlin.ui
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -19,12 +20,19 @@ class Adapter(var list: List<Purchases>) : RecyclerView.Adapter<Adapter.ViewHold
     override fun getItemCount(): Int = list.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val  list = mutableListOf<TextView>().apply {
+        val  lists = mutableListOf<TextView>().apply {
             this.add(holder.itemView.tvNumber)
             this.add(holder.itemView.tvProductName)
             this.add(holder.itemView.tvAmountRv)
             this.add(holder.itemView.tvDiscountRv)
             this.add(holder.itemView.tvSumRv)
+        }
+
+        holder.bind(list[position])
+        for (i in 0 until itemCount step 2){
+            if (holder.adapterPosition == i){
+                holder.itemView.setBackgroundColor(Color.GRAY)
+            }
         }
     }
 
@@ -32,7 +40,7 @@ class Adapter(var list: List<Purchases>) : RecyclerView.Adapter<Adapter.ViewHold
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         fun bind(purchases: Purchases) {
             itemView.tvNumber.text = purchases.number.toString()
-            itemView.tvProductName.text = purchases.purchasesName.toString()
+            itemView.tvProductName.text = purchases.purchasesName
             itemView.tvAmountRv.text = purchases.price.toString()
             itemView.tvDiscountRv.text = purchases.discount.toString()
             itemView.tvAmountRv.text = purchases.result.toString()
